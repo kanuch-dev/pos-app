@@ -365,35 +365,25 @@ const CSS = `
 .empty-state{ text-align:center; color:var(--muted); padding:40px 10px; font-size:.92rem; }
 .shared-note{ text-align:center; font-size:.72rem; color:var(--muted); margin-top:30px; }
 
-/* MOBILE FIX 2026 */
-.ktr-app,.ktr-main{overflow-x:hidden;}
-
-@media (max-width:768px){
-  .ktr-main{padding:12px;}
-  .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px;}
-  .menu-card{min-width:0;width:100%;padding:10px;}
-  .menu-card .m-name{font-size:.85rem;}
-  .summary-card{position:static !important;width:100%;margin-top:14px;}
-  .order-layout{grid-template-columns:1fr !important;}
-  .adjust-row{display:grid;grid-template-columns:80px 1fr;gap:6px;}
-  .adjust-row select{width:80px;min-width:80px;}
-  .adjust-row input{width:100%;min-width:0;}
-  .modal-card{width:100%;max-width:100%;padding:16px;}
-  .pay-options{flex-direction:column;}
-  .modal-actions{flex-direction:column;}
-}
+/* HEADER MOBILE FIX */
+.ktr-header .title-row{min-width:0;}
 
 @media (max-width:480px){
-  .ktr-nav{width:100%;display:grid;grid-template-columns:repeat(3,1fr);}
-  .ktr-nav button{padding:8px 4px;font-size:12px;}
-  .table-grid,.menu-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
-  .adjust-row{grid-template-columns:70px 1fr;}
-  .adjust-row select{
-      width:70px;
-      min-width:70px;
-      font-size:12px;
-      padding:8px 4px;
-  }
+ .ktr-app,.ktr-main{overflow-x:hidden;}
+ .ktr-header{padding:10px;}
+ .ktr-header .title-row{width:100%;flex-wrap:wrap;min-width:0;}
+ .ktr-back{font-size:12px;padding:6px 8px;}
+ .ktr-header h1{font-size:20px;}
+ .ktr-header .sub{font-size:11px;}
+ .ktr-nav{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;}
+ .ktr-nav button{width:100%;min-width:0;padding:8px 2px;font-size:11px;}
+ .ktr-main,.order-layout,.menu-grid,.summary-card{min-width:0;}
+ .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
+ .menu-card{min-width:0;width:100%;}
+ .summary-card{position:static !important;}
+ .adjust-row{display:grid;grid-template-columns:70px 1fr;gap:6px;}
+ .adjust-row select{width:70px;min-width:70px;}
+ .adjust-row input{min-width:0;width:100%;}
 }
 
 `;
@@ -1273,7 +1263,6 @@ function SummaryView({ history }) {
       {todayOrders.length === 0 ? (
         <div className="empty-state">ยังไม่มีบิลที่ชำระเงินวันนี้</div>
       ) : (
-        <div style={{overflowX:"auto"}}>
         <table className="history-table">
           <thead>
             <tr>
@@ -1298,7 +1287,6 @@ function SummaryView({ history }) {
             ))}
           </tbody>
         </table>
-        </div>
       )}
     </div>
   );
