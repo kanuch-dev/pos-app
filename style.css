@@ -1,2 +1,146 @@
 
 body{margin:0}
+/* ===========================
+   MOBILE RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px){
+
+  .ktr-main{
+    padding:12px;
+  }
+
+  .ktr-header{
+    padding:12px;
+  }
+
+  .ktr-header h1{
+    font-size:1rem;
+  }
+
+  .ktr-nav{
+    width:100%;
+  }
+
+  .ktr-nav button{
+    flex:1;
+    min-height:42px;
+  }
+
+  .table-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .menu-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .menu-card{
+    min-height:120px;
+    padding:12px;
+  }
+
+  .summary-card{
+    position:static;
+  }
+
+  .order-layout{
+    grid-template-columns:1fr !important;
+  }
+
+  .order-row{
+    flex-direction:column;
+  }
+
+  .order-row .or-actions{
+    width:100%;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .order-footer{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .order-footer .btn{
+    width:100%;
+  }
+
+  .modal-card{
+    width:100%;
+    max-width:none;
+    padding:16px;
+  }
+
+  .modal-actions{
+    flex-direction:column;
+  }
+
+  .pay-options{
+    flex-direction:column;
+  }
+
+  .manage-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .add-form{
+    flex-direction:column;
+  }
+
+  .add-form > *{
+    width:100%;
+  }
+
+  .menu-manage-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .history-table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+  .summary-stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media (max-width:480px){
+
+  .table-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .table-card{
+    padding:12px;
+  }
+
+  .menu-card .m-name{
+    font-size:.82rem;
+  }
+
+  .menu-card .m-price{
+    font-size:.82rem;
+  }
+
+  .summary-stats{
+    grid-template-columns:1fr;
+  }
+
+  .ktr-nav button{
+    font-size:.8rem;
+    padding:8px;
+  }
+}
