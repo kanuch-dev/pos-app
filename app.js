@@ -1241,6 +1241,7 @@ function SummaryView({ history }) {
       {todayOrders.length === 0 ? (
         <div className="empty-state">ยังไม่มีบิลที่ชำระเงินวันนี้</div>
       ) : (
+        <div style={{overflowX:"auto"}}>
         <table className="history-table">
           <thead>
             <tr>
@@ -1265,6 +1266,7 @@ function SummaryView({ history }) {
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </div>
   );
